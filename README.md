@@ -1,2 +1,2 @@
-# SQL_for_Dataanalyst
+# SQL_for_Data_Analyst
 Contents keeps on uploading. 
