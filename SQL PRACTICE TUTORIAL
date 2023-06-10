@@ -1,1 +1,35 @@
+--Create Database in SQL Server
+CREATE DATABASE customers;
+_______________________________________________________________________________________________________________________
+--Creating table on customers database
+CREATE TABLE customer (
+customer_id int NOT NULL PRIMARY KEY,
+first_name varchar(20) NOT NULL,
+last_name varchar(20) NOT NULL,
+country varchar(20) NOT NULL,
+age int NOT NULL,
+salary int
+);
+________________________________________________________________________________________________________________________
+--Inserting values in customer table at a once
+INSERT INTO customer VALUES
+(1,'John','Doe','Kathmandu',31,31000),
+(2,'Ram','Adhikari','Birgunj',24,21000),
+(3,'Shyam','Sharma','Hetauda',22,45000),
+(4,'Hari','Parajuli','Nuwakot',45,60000),
+(5,'Dham','Dahal','Janakpur',32,0)
+_________________________________________________________________________________________________________________________
+--Few basic SELECT Syntax Practice
+-- To see all value in table
+SELECT * FROM customer
+-- To see only first name and last name of customer
+SELECT first_name,last_name FROM customer
+-- To see top 2 row of table
+SELECT TOP 2 * FROM customer
+-- Select statement with where clause
+SELECT first_name FROM customer WHERE age<31
+-- AND operator
+SELECT first_name,last_name,salary FROM customer WHERE salary<45000 AND country='Kathmandu'
+____________________________________________________________________________________________________________________________
+--SQL AND, OR, NOT Operator and combining multiple operator for output
 
