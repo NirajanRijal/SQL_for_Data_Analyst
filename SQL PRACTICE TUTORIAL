@@ -32,4 +32,33 @@ SELECT first_name FROM customer WHERE age<31
 SELECT first_name,last_name,salary FROM customer WHERE salary<45000 AND country='Kathmandu'
 ____________________________________________________________________________________________________________________________
 --SQL AND, OR, NOT Operator and combining multiple operator for output
+--This query select output from customer table whose id is 1 or whose name start with R, means if one statement became false also
+--it will provide output but, if both statement is true, it provide output for both statement 
+SELECT first_name FROM customer WHERE customer_id=1 OR first_name LIKE 'R%'
+-- But, in AND, both statement must be true, below code will not give any output
+SELECT first_name FROM customer WHERE customer_id=1 AND first_name LIKE 'R%'
+--Below will give output for AND
+SELECT first_name FROM customer WHERE customer_id=1 AND first_name LIKE 'J%'
+--IN operator is like equals to: This will show record of 3 person with following surname
+SELECT * FROM customer WHERE last_name IN ('Dahal','Sharma','Doe')
+___________________________________________________________________________________________________________________________
+--SQL Distinct
+--It give unique values from table (No duplicate values)
+SELECT DISTINCT age FROM customer
+-- Distinct can work with multiple values too
+SELECT DISTINCT age,first_name FROM customer
+-- Distinct count (Count unique values in particular column)
+SELECT COUNT(DISTINCT age) FROM customer
+__________________________________________________________________________________________________________________________
+-- AS (its like Alias- giving name to column)
+SELECT COUNT(DISTINCT age) AS counting FROM customer
+-- Or we can give another name to output column like:
+__________________________________________________________________________________________________________________________
+--TOP and LIMIT, offset (the SQL command selects 2 rows starting from the fourth row. OFFSET 3 means the first 3 rows are excluded.)
+-- Below query will give first 2 row with all record
+SELECT TOP 2 * FROM customer
+--Below query will give first name and age of first 2 record
+SELECT TOP 2 first_name,age FROM customer
+-- LIMIT
+
 
