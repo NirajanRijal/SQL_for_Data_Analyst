@@ -59,6 +59,26 @@ ________________________________________________________________________________
 SELECT TOP 2 * FROM customer
 --Below query will give first name and age of first 2 record
 SELECT TOP 2 first_name,age FROM customer
--- LIMIT
+____________________________________________________________________________________________________________________________
+--IN , NOT IN
+SELECT first_name FROM customer WHERE last_name IN ('Dahal','Sharma')
+--Below code will show all first name except to that person whose last name is Dahal
+SELECT first_name FROM customer WHERE last_name NOT IN ('Dahal')
+_____________________________________________________________________________________________________________________________
+--BETWEEN
+SELECT first_name FROM customer WHERE Salary BETWEEN 20000 and 35000 
+-- NOT BETWEEN
+SELECT first_name FROM customer WHERE Salary NOT BETWEEN 20000 and 35000 
+_____________________________________________________________________________________________________________________________
+-- IS NULL and IS NOT NULL
+SELECT first_name FROM customer WHERE Salary IS NULL 
+SELECT first_name FROM customer WHERE Salary IS NOT NULL 
+____________________________________________________________________________________________________________________________
+-- MIN, MAX, AVG, SUM
+SELECT MAX(Salary) FROM customer 
+SELECT MIN(Salary) FROM customer 
+SELECT AVG(Salary) FROM customer 
+SELECT SUM(Salary) FROM customer 
 
+--NOTE: COUNT and IN needs bracket
 
